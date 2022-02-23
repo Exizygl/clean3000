@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    
+  }
+  
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  .inputContainer{
+    margin: 1rem 0;
+    
+    label {
+        margin-right: 1rem;
+    }
+
+    .observation {
+        vertical-align:top;
+    }
+}
+  

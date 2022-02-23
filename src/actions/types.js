@@ -1,0 +1,1 @@
+export const UPDATE_AVIS = "UPDATE_AVIS";
