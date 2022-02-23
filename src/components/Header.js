@@ -1,12 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import "./Header.scss"
+import { useNavigate } from 'react-router-dom';
+import "./Header.scss";
+import { useDispatch } from 'react-redux';
+import { updateAvis } from '../actions';
+
+
 
 
 const Header = () => {
+  
+  
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const resetState = () =>{
+    dispatch(updateAvis("intervenant", ""));
+    dispatch(updateAvis("client", ""));
+    dispatch(updateAvis("date", ""));
+    dispatch(updateAvis("observation", ""));
+
+    navigate('/');
+
+
+  }
+
   return (
     <header>
-        <Link to="/"><img src="./img/logo-clean3000-transparent.png" alt="" /></Link>
+        <img src="./img/logo-clean3000-transparent.png" onClick={() =>resetState()} alt="" />
         
     </header>
   )

@@ -1,3 +1,5 @@
+$breakpoint-phone: 600px;
+
 * {
     box-sizing: border-box;
     
@@ -7,16 +9,46 @@
   html {
     font-size: 62.5%;
   }
+
+body{
+  background-color: rgb(238, 247, 247);
+}
   
-  .inputContainer{
+.inputContainer{
     margin: 1rem 0;
+    text-align: center;
+    display: flex;
+    font-size: 1.6rem;
     
+    @media (max-width: $breakpoint-phone) {
+      flex-direction: column;
+      
+}
     label {
         margin-right: 1rem;
+        width: 50%;
+        text-align: right;
+        @media (max-width: $breakpoint-phone) {
+          width: 100%;
+          text-align: center;
+          
+    }
     }
 
     .observation {
         vertical-align:top;
     }
+
+    .Champ-selection{
+      
+      @media (max-width: $breakpoint-phone) {
+        width: 80%;
+        margin: 0 auto;
+        
+  }
+    }
 }
-  
+
+.button-form{
+  text-align: center;
+}

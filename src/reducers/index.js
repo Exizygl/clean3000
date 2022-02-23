@@ -43,8 +43,7 @@ export default function rootReducer(state = initialState, action) {
         case UPDATE_AVIS:
             let copyInfo = {...state.InformationAvis};
             copyInfo[action.payload.key] = action.payload.value;
-           console.log(action.payload);
-           console.log(action.payload.key);
+           
             return{
                 ...state,
                 InformationAvis : copyInfo

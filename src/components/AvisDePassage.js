@@ -13,24 +13,24 @@ const AvisDePassage = () => {
     <div>
 
       <Header />
-      <h1>AVIS DE PASSAGE</h1>
+      <h1 className='title-avis'>avis de passage</h1>
 
       <div className='container'>
         <div className='container-avis'>
-          <div className=' avis avis-Intervenant'>
+          <div className='avis'>
             Nom de l'intervenant : {InformationAvis.intervenant}
           </div>
           
-          <div className=' avis avis-Client'>
+          <div className='avis'>
             Nom entreprise ou client : {InformationAvis.client}
           </div>
-          <div className=' avis avis-Client'>
-             Notre technicien est intervenu pour l'entretien de la vitrerie le : {InformationAvis.date}
+          <div className='avis'>
+             Date de l'intervention : {InformationAvis.date}
           </div>
-          <div className=' avis avis-observation'>
-            OBSERVATION : {InformationAvis.observation}
+          <div className='avis'>
+            <span>observation :</span> {InformationAvis.observation}
           </div>
-          <div>
+          <div className='thanks'>
             Merci de votre confiance
             </div>
         </div>

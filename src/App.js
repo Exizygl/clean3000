@@ -20,7 +20,7 @@ function App() {
   
   const dispatch = useDispatch();
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
 
   const handleSubmit = (e) => {
@@ -34,7 +34,7 @@ function App() {
       alert("veuillez entrer toutes les informations") 
     }
 
-    if(valid) history('/avis');
+    if(valid) navigate('/avis');
   }
 
 
@@ -52,7 +52,7 @@ function App() {
     });
 
     return (
-      <select name="intervenant" id="intervenant-select" onChange={(e) => handleChange("intervenant", e.target.value)}>
+      <select name="intervenant" id="intervenant-select" className='Champ-selection' value={InformationAvis.intervenant} onChange={(e) => handleChange("intervenant", e.target.value)}>
         <option></option>
         {list}
       </select>
@@ -73,7 +73,7 @@ function App() {
     });
 
     return (
-      <select name="client" id="client-select"  onChange={(e) => handleChange("client", e.target.value)}>
+      <select name="client" id="client-select" className='Champ-selection' value={InformationAvis.client} onChange={(e) => handleChange("client", e.target.value)}>
         <option></option>
         {list}
       </select>
@@ -92,6 +92,8 @@ function App() {
     <div className="App">
       <Header />
 
+      <h1 className='title-avis'> formulaire d'avis de passage</h1>
+      
       <form onSubmit={(e) => handleSubmit(e)}>
 
         <div className="inputContainer">
@@ -106,17 +108,18 @@ function App() {
 
         <div className="inputContainer">
           <label htmlFor="date-select">Start date:</label>
-          <input type="date" id="date-select" name="date" onChange={(e) => handleChange("date", e.target.value)}/>
+          <input type="date" id="date-select" name="date" className='Champ-selection' value={InformationAvis.date} onChange={(e) => handleChange("date", e.target.value)}/>
         </div>
         
         <div className="inputContainer observation">
           <label htmlFor="observation">OBSERVATIONS:</label>
-          <textarea name="message" rows="10" cols="30" onChange={(e) => handleChange("observation", e.target.value)}></textarea>
+          <textarea name="message" rows="10" cols="30" className='Champ-selection' value={InformationAvis.observation} onChange={(e) => handleChange("observation", e.target.value)}></textarea>
         </div>
 
         
-
-        <input type="submit" value="Avis de passage" />
+      <div className='button-form'>
+        <input  type="submit" value="Avis de passage" />
+      </div>
       </form>
     </div>
   );
