@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { updateAvis } from './actions';
 import './App.scss';
 import Header from './components/Header';
@@ -10,15 +11,30 @@ import Selection from './components/Selection';
 
 
 
+
 function App() {
 
   const ListeIntervenants = useSelector(state => state.intervenants);
   const ListeClients = useSelector(state => state.client);
+  const InformationAvis = useSelector(state => state.InformationAvis);
+  
   const dispatch = useDispatch();
+
+  const history = useNavigate();
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    let valid = false;
+
+    if(InformationAvis.intervenant !== "" && InformationAvis.client !== ""  && InformationAvis.date !== "" && InformationAvis.observation){
+      valid =true;
+    }else{
+      alert("veuillez entrer toutes les informations") 
+    }
+
+    if(valid) history('/avis');
   }
 
 

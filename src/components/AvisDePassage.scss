@@ -1,0 +1,34 @@
+.container{
+
+    font-size: 1.6rem;
+    .container-avis{
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        .avis{
+            display: flex;
+            margin: 0.2rem 0;
+            width: 100%;
+        }
+
+        .avis-observation{
+            
+            .observation-title{
+                margin-right: 0.5rem;
+
+            }
+            .observation-entri{
+                
+                width: 70%;
+                overflow-wrap:break-word;
+            }
+        }
+
+    }
+
+    
+}

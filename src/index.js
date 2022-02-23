@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import reportWebVitals from './reportWebVitals';
 import NotFound from './NotFound';
-import AvisDePassage from './AvisDePassage';
+import AvisDePassage from './components/AvisDePassage';
 
 
 
@@ -21,7 +21,7 @@ const Root = () => (
   <BrowserRouter>
     <Routes>
       <Route exact path='/' element={<App />} />
-      <Route path='/Avis' element={<AvisDePassage />} />
+      <Route exact path='/avis' element={<AvisDePassage />} />
       <Route element={<NotFound />} />
     </Routes>
   </BrowserRouter>
